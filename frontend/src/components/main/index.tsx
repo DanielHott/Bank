@@ -7,6 +7,9 @@ import { transactionMaker } from "../../utils/requestTransaction";
 import { Navigate } from "react-router-dom";
 import { Transactions } from "../transactions";
 import { useAddContext } from "../../contexts/UserContext";
+import { Footer } from "../footer";
+import { ToastContainer, toast } from 'react-toastify';
+
 
 export function Main() {
     const [ render, setRender ] = useState(0);
@@ -57,11 +60,11 @@ export function Main() {
         e.preventDefault();
         const transaction: any = await transactionMaker(userName, loginInfo.destination, loginInfo.value );
         if(transaction.id) {
-            alert('Transação concluída com sucesso!');
+            toast.success('transaction completed successfully!');
             validateToken();
         }
-        if(transaction.message === 'Não pode transferir para si mesmo.') return alert('Não pode transferir para si mesmo.')
-        if(transaction.message) return alert('Usuário não encontrado!')
+        if(transaction.message === 'Não pode transferir para si mesmo.') return toast.error(`You can't transfer for yourself!`)
+        if(transaction.message) return toast.error('Username not find')
     }
 
     useEffect(() => {
@@ -80,22 +83,25 @@ export function Main() {
     return (
         <Container>
             <Logout>
-            <Header text={`Saldo: R$${myBalance}`} />
-            <button onClick={() => logout()}> Sair</button>
+            <Header text={`Balance: $${myBalance}`} />
+            <button onClick={() => logout()}>Logout</button>
             </Logout>
             <Content>
             <Transaction onSubmit={(e) => submitTransaction(e)}>
-                <h1>Transferências</h1>
-                Quem vai receber:
+                <h1>💰 Do a Transaction</h1>
+                Destine:
                 <input required onChange={(e) => setLoginInfo({...loginInfo, destination: e.target.value } )} name="user" type="text" placeholder="Username"></input>
-                 Qual o valor?
-                <input required onChange={(e) => setLoginInfo({...loginInfo, value: Number(e.target.value) } )} name="value" type="number" placeholder="Valor"></input>
-                <button type="submit">Transferir</button>
+                 Value:
+                <input required onChange={(e) => setLoginInfo({...loginInfo, value: Number(e.target.value) } )} name="value" type="number" placeholder="Value"></input>
+                <button type="submit">Send</button>
             </Transaction>
             <TransactionHistory>
-            <button onClick={() => setOpenTransaction(true)}>Transações</button>
+            <img src="Financialogo.png"/>
+            <button onClick={() => setOpenTransaction(true)}>Transactions</button>
             </TransactionHistory>
             </Content>
+            <Footer />
+            <ToastContainer />
         </Container>
     )
     }
@@ -104,7 +110,7 @@ export function Main() {
         <div>
             <Header text="Vixe!" />
             <Desconected>
-            <h1>Você foi desconectado!</h1>
+            <h1>Disconnected!</h1>
             <a href="/"> Voltar à tela de login</a>
             </Desconected>
         </div>

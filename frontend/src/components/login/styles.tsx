@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    
+    background-image: url('https://cdn.pixabay.com/photo/2014/02/01/18/00/money-256315_1280.jpg');
+    height: 100vh;
 `;
 
 export const Create = styled.div`
@@ -15,6 +16,8 @@ export const Create = styled.div`
         display: flex;
         flex-direction: column;
         text-align: center;
+        color: white;
+
     }
     a {
         color: black;
@@ -22,6 +25,8 @@ export const Create = styled.div`
         text-decoration: none;
         margin-bottom: 4%;
         color: white;
+        border: solid 1px white;
+        font-size: 18px;
         border-radius: 5px;
         padding: 5px 40px;
         :hover {
@@ -29,6 +34,8 @@ export const Create = styled.div`
         }
     }
     @media (max-width: 500px) {
+        display: flex;
+        align-items: center;
         flex-direction: column;
         div {
         display: flex;
@@ -57,11 +64,14 @@ export const Form = styled.form`
     }
     button {
         margin-top: 20px;
+        font-size: 18px;
         border: none;
         color: white;
         border-radius: 5px;
+        font-family: 'Oswald', sans-serif;
         background: black;
-        padding: 5px 40px;
+        padding: 6px 90px;
+        border: solid 1px white;
         :hover {
             background: #242424;
         }
@@ -79,12 +89,14 @@ export const Form = styled.form`
         border-radius: 4px;
         font-family: 'Oswald', sans-serif;
         margin-top: 10px;
-        font-size: 15px;
+        font-size: 18px;
         margin-bottom: 10px;
-        padding: 7px 100px
+        padding: 10px 90px
     }
         button {
-            padding: 7px 160px;
+            padding: 8px 160px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 18px;
             :hover {
             background: #242424;
         }

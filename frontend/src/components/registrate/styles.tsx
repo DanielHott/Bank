@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-
+ 
 `;
 
 export const FormArea = styled.div`
@@ -17,8 +17,10 @@ export const FormArea = styled.div`
     }
     @media (max-width: 500px) {
         flex-direction: column;
+        
         div {
         display: flex;
+        padding: 10px;
         flex-direction: column;
         text-align: center;
         margin-bottom: 10%;
@@ -63,7 +65,7 @@ export const Back = styled.div`
 export const Form = styled.form`
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
     justify-content: center;
     padding: 50px;
     input {
@@ -81,6 +83,7 @@ export const Form = styled.form`
         color: white;
         border-radius: 5px;
         background: black;
+        font-family: 'Oswald', sans-serif;
         padding: 10px;
         :hover {
             background: #242424;
@@ -91,10 +94,12 @@ export const Form = styled.form`
         margin-top: -30px;
         margin-left: 10%;
         input {
-            padding: 10px 100px;
+            padding: 12px 100px;
+            font-size: 16px;
         }
         button {
-            padding: 7px 140px;
+            padding: 10px 150px;
+            font-size: 15px;
         }
     }
 `;

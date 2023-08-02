@@ -3,6 +3,9 @@ import { registrateUser } from "../../utils/requestUser";
 import { Navigate } from 'react-router-dom';
 import { Header } from "../header"
 import { Container, Form, FormArea, Back } from "./styles"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Footer } from "../footer";
 
 
 export function Registrate() {
@@ -19,13 +22,12 @@ export function Registrate() {
         if(hasNumber(password) && hasUpper(password) && username.length >= 3){
            const request = await registrateUser(username, password)
            if(request === 200) {
-            alert('Usuário criado com sucesso!')
-            setRedirect(true);
+            toast.success('User created successfully')
            }
-           if(request === 400) alert('Este nome de usuário já existe!')
+           if(request === 400) toast.error('This account name already exists!')
         }
         if(!hasNumber(password) || !hasUpper(password) || username.length < 3)
-        return alert('Username ou password inválidos!')
+        return toast.error('Invalid username or password!')
     }
 
     if(redirect) {
@@ -39,20 +41,21 @@ export function Registrate() {
     return (
         <Container>
             <Back>
-            <Header text="Faça seu Cadastro!"/>
-            <a href="/" >Voltar</a>
+            <Header text="Create your account"/>
+            <a href="/" >Back</a>
             </Back>
             <FormArea>
             <div>
-            <h3>Username deve possuir mais de 3 caracteres.</h3>
-            <h3>Password deve possuir pelo menos 8 caracteres, um número e uma letra maiúscula.</h3>
+            <h3>Username require more than 3 caracters.</h3>
+            <h3>Password require more than 8 characters, has to have a number and a upper character.</h3>
             </div>
             <Form onSubmit={(e) => loginSubmit(e)}>
             <input required onChange={(e) => setLoginInfo({...loginInfo, username: e.target.value } )} type="text" placeholder="Username"></input>
-            <input required onChange={(e) => setLoginInfo({...loginInfo, password: e.target.value } )} type="text" placeholder="Password"></input>
-            <button type="submit">Cadastrar</button>
+            <input required onChange={(e) => setLoginInfo({...loginInfo, password: e.target.value } )} type="password" placeholder="Password"></input>
+            <button type="submit">Cadastrate</button>
             </Form>
             </FormArea>
+            <ToastContainer />
         </Container>
     )
 }

@@ -47,6 +47,11 @@ export const Content = styled.div`
     justify-content: center;
     align-items: center;
     margin-top: -20px;
+    @media (max-width: 600px) {
+        flex-wrap: wrap;
+        max-width: 100vw;
+    }
+    
 `
 
 export const NotFound = styled.div`
@@ -64,9 +69,8 @@ export const NotFound = styled.div`
 export const Transaction = styled.form`
     display: flex;
     flex-direction: column;
-    width: 40vw;
+    width: 100vw;
     font-size: 14px;
-    margin-left: 10%;
     margin-top: 10%;
     text-align: center;
     height: 60vh;
@@ -100,6 +104,9 @@ export const Transaction = styled.form`
     @media (min-width: 1000px) {
         margin-top: 0%;
         text-align: left;
+        margin-left: 5%;
+
+        width: 40vw;
         input {
         border: none;
         text-align: center;
@@ -128,7 +135,6 @@ export const TransactionHistory = styled.div`
     padding: 20px;
     justify-content: center;
     font-family: 'Oswald', sans-serif;
-
     border-radius: 3px;
     button {
         font-family: 'Oswald', sans-serif;
@@ -153,6 +159,12 @@ export const TransactionHistory = styled.div`
         border-radius: 4px;
         padding: 6px 4px
     }
+
+    img {
+        height: 150px;
+        weight: 340px;
+    }
+
     @media (min-width: 1000px) {
         margin-top: 0%;
         margin-right: 2%;
@@ -168,6 +180,12 @@ export const TransactionHistory = styled.div`
         font-size: 15px;
         margin-bottom: 10px;
         padding: 7px 50px
+    }
+    img {
+        height: 230px;
+        weight: 50px;
+        padding-left: 80px;
+        padding-right: 80px;
     }
     }
 `;

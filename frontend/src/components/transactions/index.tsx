@@ -8,7 +8,7 @@ export function Transactions(user: { username: string }) {
     const { openTransaction, setOpenTransaction } = useAddContext();
     const [ debited, setDebited ] = useState(true);
     const [ credited, setCredited ] = useState(true);
-    const [ actualVisor, setActualVisor ] = useState('Todas');
+    const [ actualVisor, setActualVisor ] = useState('All');
     const [ listCredited, setListCredited ] = useState([])
     const [ nameList, setNameList ] = useState([])
     const [ listDebited, setListDebited ] = useState([])
@@ -35,16 +35,16 @@ export function Transactions(user: { username: string }) {
     return (
         <Container>
             <Back>
-            <Header text="Suas transações" />
-            <button onClick={() => setOpenTransaction(false)} > Voltar</button>
+            <Header text="Your Transactions" />
+            <button onClick={() => setOpenTransaction(false)} > Back</button>
             </Back>
             <Content>
             <div>
             <button onClick={() => {
                 setDebited(true);
                 setCredited(true);
-                setActualVisor('Todas');
-            }}>Todas</button>
+                setActualVisor('All');
+            }}>All</button>
             <button onClick={() => {
                 setDebited(false);
                 setCredited(true);
@@ -59,14 +59,14 @@ export function Transactions(user: { username: string }) {
             <h3>{ actualVisor }</h3>
             <table>
             <tr>
-                <th>Valor</th>
-                <th>De/Para</th>
-                <th>Data</th>
+                <th>Value</th>
+                <th>To</th>
+                <th>Date</th>
             </tr>
             { listCredited && credited && listCredited.map((item: any, index) => {
                 return (
                     <tr key={index}>
-                      <td>+R${ item.value.toFixed(2) }</td>
+                      <td>+${ item.value.toFixed(2) }</td>
                       <td>{ nameList.map((name: any) => {
                       if(item.debited_account_id === name.account_id) {
                           return name.username;
