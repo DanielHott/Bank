@@ -1,63 +1,63 @@
 ## Bank
 
-#### Olá, me chamo Daniel Hott e esta é uma aplicação fullstack de banco com possibilidade de realizar transações, mapear suas transações, criar uma nova conta e realizar login.
+#### Hello, my name is Daniel Hott, and this is a full-stack banking application that allows you to perform transactions, track your transactions, create a new account, and login.
 
-### Tecnologias: 
+### Technologies:
 
-#### Frontend: 
+#### Frontend:
 
-React.js com Typescript e styled-components.
+React.js with Typescript and styled-components.
 
 #### Backend:
 
-Node.js com Typescript, express, cors, dotenv, sequelize e bcrypt para senhas hasheadas.
+Node.js with Typescript, express, cors, dotenv, sequelize, and bcrypt for hashed passwords.
 
-#### Banco de dados:
+#### Database:
 
 Postgres:10.17
 
 #### Docker:
 
-Docker-compose para buildar e subir a aplicação em qualquer máquina.
+Docker-compose to build and deploy the application on any machine.
 
-### Prints da aplicação:
+### Application Screenshots:
 
-#### Login -  Na página de login, há a possibilidade de fazer o login e criar nova conta.
+#### Login - On the login page, you can log in or create a new account.
 
 ![Web 1](https://github.com/DanielHott/imagens/blob/master/login-ng.png)
 
-#### Registrate -  Na página de registrar usuário, há a possibilidade de criar uma nova conta.
+#### Register - On the user registration page, you can create a new account.
 
 ![Web 1](https://github.com/DanielHott/imagens/blob/master/registrate-ng.png)
 
-#### Main -  Na página principal, o usuário pode realizar transferências, voltar para a tela de login.
+#### Main - On the main page, the user can make transfers or return to the login screen.
 
 ![Web 1](https://github.com/DanielHott/imagens/blob/master/transfer-ng.png)
 
-#### Main -  Simulando uma transferência, fornecendo o username destino e o valor.
+#### Main - Simulating a transfer, providing the destination username and amount.
 
 ![Web 1](https://github.com/DanielHott/imagens/blob/master/transfer-doing-ng.png)
 
-#### Transactions -  Na página de transações do usuário, permite que listemos todas as transações realizadas inclusive com filtro para visualizar todas as transações, somente as cash-in e somente as cash-out.
+#### Transactions - On the user's transactions page, you can list all transactions, including filters to view all transactions, only cash-ins, and only cash-outs.
 
 ![Web 1](https://github.com/DanielHott/imagens/blob/master/list-transfer-ng.png)
 
-### Para rodar a aplicação, deve ter o docker instalado na máquina.
+### To run the application, you must have Docker installed on your machine.
 
-#### Passos para rodar a aplicação:
+#### Steps to run the application:
 
-1 - Vá pelo terminal até a pasta `Bank`
+1 - Navigate to the `Bank` folder through the terminal.
 
-2 - Certifique que não há nada rodando nos endpoints: `http://localhost:3000/` e `http://localhost:6585/`
+2 - Make sure there is nothing running on endpoints: `http://localhost:3000/` and `http://localhost:6585/`
 
-2 - Rode o comando `docker-compose build`
+3 - Run the command `docker-compose build`
 
-3 - Rode o comando `docker-compose up`
+4 - Run the command `docker-compose up`
 
-4 - Após o processo de configuração do conteiner, confira a aplicação frontend rodando em `http://localhost:3000/` e backend rodando em `http://localhost:6585/`
+5 - After the container configuration process, access the frontend application at `http://localhost:3000/` and the backend at `http://localhost:6585/`
 
-#### Meus dados:
+#### My Information:
 
-Linkedin: `https://www.linkedin.com/in/danielhott/`;
+Linkedin: [https://www.linkedin.com/in/danielhott/](https://www.linkedin.com/in/danielhott/)
 
-Github: `https://github.com/DanielHott`;
+Github: [https://github.com/DanielHott](https://github.com/DanielHott)
