@@ -24,7 +24,12 @@ Docker-compose to build and deploy the application on any machine.
 
 #### Login - On the login page, you can log in or create a new account.
 
-![Web 1](https://github.com/DanielHott/imagens/blob/master/login-ng.png)
+![Web 1](https://github.com/DanielHott/imagens/blob/master/ngfull.png)
+
+##### Mobile view
+
+![Web 1](https://github.com/DanielHott/imagens/blob/master/ngmobile.png)
+
 
 #### Register - On the user registration page, you can create a new account.
 
